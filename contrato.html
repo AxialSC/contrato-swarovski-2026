@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato de Servicios Técnicos - AXIAL SECURITY / Luxury Crystals</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.8;
+            color: #1a1917;
+            background: #ede9e3;
+            padding: 20px;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fdfcfa;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+            padding: 0;
+        }
+        .doc-header {
+            background: #1a1917;
+            color: #faf8f5;
+            padding: 40px 60px;
+            text-align: center;
+        }
+        .doc-header .eyebrow {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: #c9a96e;
+            display: block;
+            margin-bottom: 14px;
+        }
+        .doc-header h1 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .doc-header .doc-sub {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 11px;
+            color: #c9a96e;
+            opacity: 0.8;
+            letter-spacing: 0.15em;
+        }
+        .partes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 2px solid #c9a96e;
+        }
+        .parte {
+            padding: 24px 40px;
+            border-right: 1px solid #ede9e3;
+        }
+        .parte:last-child { border-right: none; }
+        .parte-rol {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 8px;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #c9a96e;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .parte-nombre {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #1a1917;
+            margin-bottom: 4px;
+        }
+        .parte-datos {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 12px;
+            color: #6a6762;
+            line-height: 1.6;
+        }
+        .doc-body { padding: 40px 60px 60px; }
+        .art {
+            margin-bottom: 32px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid #ede9e3;
+        }
+        .art:last-child { border-bottom: none; }
+        .art-titulo {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #c9a96e;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .art h2 {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #1a1917;
+            margin-bottom: 14px;
+            letter-spacing: 0.03em;
+        }
+        .art p { margin-bottom: 12px; color: #3a3835; }
+        .art ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 12px;
+        }
+        .art ul li {
+            padding: 7px 0 7px 22px;
+            position: relative;
+            border-bottom: 1px solid #f0ede8;
+            color: #3a3835;
+            font-size: 13.5px;
+        }
+        .art ul li:last-child { border-bottom: none; }
+        .art ul li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #c9a96e;
+        }
+        .caja-importante {
+            background: #fff8ee;
+            border: 1px solid #d4b07a;
+            border-left: 4px solid #c9a96e;
+            padding: 16px 20px;
+            margin: 14px 0;
+            font-family: "Segoe UI", sans-serif;
+            font-size: 13px;
+            color: #4a3820;
+            line-height: 1.7;
+        }
+        .caja-importante strong { color: #2a1a08; }
+        .caja-riesgo {
+            background: #fdf5f0;
+            border: 1px solid #e8c9b8;
+            border-left: 4px solid #cc5500;
+            padding: 16px 20px;
+            margin: 14px 0;
+            font-family: "Segoe UI", sans-serif;
+            font-size: 13px;
+            color: #5a2810;
+            line-height: 1.7;
+        }
+        .caja-riesgo strong { color: #3a1a08; }
+        .caja-verde {
+            background: #f0f7f0;
+            border: 1px solid #c5dfc5;
+            border-left: 4px solid #2d6a4f;
+            padding: 16px 20px;
+            margin: 14px 0;
+            font-family: "Segoe UI", sans-serif;
+            font-size: 13px;
+            color: #1a3a1a;
+            line-height: 1.7;
+        }
+        .caja-verde strong { color: #0a2a0a; }
+        .firma-section {
+            border-top: 2px solid #c9a96e;
+            padding-top: 36px;
+            margin-top: 40px;
+        }
+        .firma-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 24px;
+        }
+        .firma-bloque h4 {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #c9a96e;
+            margin-bottom: 18px;
+        }
+        .firma-linea {
+            border: none;
+            border-bottom: 1px solid #1a1917;
+            height: 44px;
+            margin-bottom: 8px;
+        }
+        .firma-nombre {
+            font-size: 13px;
+            font-weight: bold;
+            color: #1a1917;
+        }
+        .firma-cargo {
+            font-family: "Segoe UI", sans-serif;
+            font-size: 11px;
+            color: #9a9690;
+        }
+        .footer {
+            background: #1a1917;
+            color: rgba(255,255,255,0.45);
+            text-align: center;
+            padding: 20px 40px;
+            font-family: "Segoe UI", sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+        }
+        .footer strong { color: #c9a96e; }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="doc-header">
+        <span class="eyebrow">Documento Legal · Versión para Revisión</span>
+        <h1>Contrato de Prestación de Servicios Técnicos</h1>
+        <p class="doc-sub">Mantenimiento Preventivo y Correctivo Integral · Red Swarovski Argentina</p>
+    </div>
+
+    <div class="partes-grid">
+        <div class="parte">
+            <span class="parte-rol">El Prestador</span>
+            <div class="parte-nombre">AXIAL SECURITY</div>
+            <div class="parte-datos">
+                Responsable: Iván Abrigo<br>
+                CUIT: 20-24405084-1<br>
+                Ingresos Brutos: 20-24405084-1<br>
+                Domicilio Comercial: Marco Polo 5587, Villa Bosch, Buenos Aires<br>
+                Correo: axial.security@gmail.com
+            </div>
+        </div>
+        <div class="parte">
+            <span class="parte-rol">El Cliente</span>
+            <div class="parte-nombre">LUXURY CRYSTALS S.A.C. E I.</div>
+            <div class="parte-datos">
+                CUIT: 30-53889423-7<br>
+                Domicilio Comercial: Arias 1639, Piso 9, Capital Federal<br>
+                Ciudad de Buenos Aires<br>
+                Representante: Luján Ortiz (Gerente)<br>
+                Correo: mlortiz@satrendy.com.ar
+            </div>
+        </div>
+    </div>
+
+    <div class="doc-body">
+
+        <p style="font-family:'Segoe UI',sans-serif; font-size:13px; color:#6a6762; margin-bottom:36px; line-height:1.7;">
+            En la Ciudad Autónoma de Buenos Aires, República Argentina, a los ____ días del mes de __________ de 2026, las partes identificadas precedentemente acuerdan celebrar el presente contrato de prestación de servicios técnicos, sujeto a las siguientes cláusulas y condiciones:
+        </p>
+
+        <!-- ART 1 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 1</span>
+            <h2>Objeto del Contrato</h2>
+            <p>El PRESTADOR (AXIAL SECURITY) se compromete a brindar al CLIENTE (LUXURY CRYSTALS S.A.C. E I.) un servicio de <strong>Mantenimiento Preventivo y Correctivo Integral</strong> para la totalidad de la red de tiendas Swarovski Argentina, que comprende las sucursales detalladas en el Anexo A del presente contrato.</p>
+            <p>El servicio tiene por objeto garantizar la operatividad continua de los activos técnicos e infraestructura de cada tienda, mediante rutinas de prevención y respuesta correctiva ante incidencias.</p>
+        </div>
+
+        <!-- ART 2 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 2</span>
+            <h2>Alcance Técnico — Activos Cubiertos</h2>
+            <p>El servicio cubre la mano de obra para diagnóstico, reparación, reemplazo y agregado de componentes en las siguientes áreas, según la modalidad contratada:</p>
+            <ul>
+                <li>Iluminación LED integral: luminarias interiores y exteriores, fuentes para pantallas LED, todo tipo de lámparas</li>
+                <li>Electricidad: tableros principales y seccionales, cableados internos/externos, tomacorrientes, fuentes de alimentación</li>
+                <li>Mobiliario y cerrajería: muebles, bajo mesadas, bisagras, guías, gondolas, cerraduras de acceso y mobiliario</li>
+                <li>Aires acondicionados: reparación, instalación y desmonte completo</li>
+                <li>Seguridad electrónica: CCTV (cámaras y NVR), alarmas activas/pasivas, puertas automáticas, sistemas EAS</li>
+                <li>Tecnología y puestos de trabajo: PCs de ventas, UPS, impresoras, servidores</li>
+                <li>Infraestructura general: motores de cortina metálica, reparaciones varias</li>
+                <li>Cartelería LED exterior (exclusivo Abono Full)</li>
+            </ul>
+            <div class="caja-verde">
+                <strong>Nota de Calidad:</strong> Todas las intervenciones se realizan con herramental de primera línea (Milwaukee, DeWalt, Fluke). El PRESTADOR garantiza diagnósticos precisos, seguridad eléctrica y estándares de terminación superiores.
+            </div>
+        </div>
+
+        <!-- ART 3 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 3</span>
+            <h2>Modalidad de Servicio Contratada</h2>
+            <p>Las partes acuerdan la siguiente modalidad de servicio (marcar con X al momento de la firma):</p>
+            <ul>
+                <li><strong>☐ ABONO MEDIUM:</strong> $3.250.000 + IVA / mes. Cobertura Lunes a Viernes, horario extendido. Tiempo de respuesta: 3 horas. Gastos de movilidad y viajes a locales de provincia: costo adicional.</li>
+                <li><strong>☐ ABONO FULL:</strong> $4.500.000 + IVA / mes. Cobertura Lunes a Sábados, 08:00 a 22:00 hs, feriados incluidos. Tiempo de respuesta: menos de 3 horas. Incluye viáticos, peajes, estacionamiento AMBA, y 2 viajes mensuales a locales de provincia con todos los gastos. Fondo Operativo: $500.000 + IVA / mes (facturado por separado).</li>
+            </ul>
+            <p>Ante cualquier duda sobre el alcance de cada modalidad, prevalece lo establecido en la propuesta comercial adjunta como Anexo B.</p>
+        </div>
+
+        <!-- ART 4 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 4</span>
+            <h2>Precio y Forma de Pago</h2>
+            <p>El precio del servicio es el establecido en el Artículo 3 según la modalidad seleccionada, expresado en pesos argentinos, con más el IVA correspondiente.</p>
+            <ul>
+                <li>El abono mensual deberá abonarse <strong>por adelantado, del 1 al 5 de cada mes calendario</strong>, mediante transferencia bancaria a la cuenta informada por el PRESTADOR.</li>
+                <li>El Fondo Operativo de Libre Disponibilidad ($500.000 + IVA, exclusivo Abono Full) se factura de forma independiente al abono mensual, dentro de los mismos plazos.</li>
+                <li>Los precios podrán ser actualizados trimestralmente por el PRESTADOR, con un preaviso mínimo de 30 días corridos al CLIENTE.</li>
+            </ul>
+            <div class="caja-riesgo">
+                <strong>Mora y consecuencias del incumplimiento en el pago:</strong><br><br>
+                Vencido el día 5 del mes sin recepción del pago, el CLIENTE dispondrá de un plazo de gracia de <strong>10 (diez) días hábiles</strong> para regularizar la deuda.<br><br>
+                Transcurrido dicho plazo sin pago, el PRESTADOR quedará habilitado para:<br>
+                a) <strong>Suspender la prestación del servicio</strong> sin incurrir en incumplimiento contractual, hasta la regularización total de la deuda.<br>
+                b) Aplicar sobre el saldo adeudado una <strong>tasa de interés compensatorio equivalente a la tasa activa para descubiertos en cuenta corriente del Banco de la Nación Argentina</strong>, vigente al momento del vencimiento, calculada desde el día 6 del mes hasta la fecha efectiva de pago.<br>
+                c) Iniciar las acciones legales que correspondan para el cobro de la deuda más intereses y costas.<br><br>
+                <strong>Queda expresamente establecido que el PRESTADOR no estará obligado a prestar servicios durante el período de mora hasta que la deuda sea íntegramente cancelada.</strong>
+            </div>
+        </div>
+
+        <!-- ART 5 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 5</span>
+            <h2>Fondo Operativo de Libre Disponibilidad</h2>
+            <p>En el marco del Abono Full, el PRESTADOR administrará mensualmente un fondo operativo de <strong>$500.000 + IVA por mes calendario</strong>, destinado exclusivamente a la adquisición de materiales, repuestos e insumos necesarios para el mantenimiento de la red de tiendas del CLIENTE.</p>
+            <ul>
+                <li>Todas las adquisiciones realizadas con este fondo serán facturadas a nombre de AXIAL SECURITY.</li>
+                <li><strong>La totalidad de los bienes adquiridos con este fondo quedan en propiedad exclusiva e irrevocable de LUXURY CRYSTALS S.A.C. E I.</strong>, desde el momento de su adquisición.</li>
+                <li>El PRESTADOR entregará al CLIENTE una rendición detallada mensual con comprobantes digitalizados de cada compra, asignada al local correspondiente, dentro de los primeros 5 días hábiles del mes siguiente.</li>
+                <li>El fondo no es acumulable: el saldo no utilizado en un mes no se transfiere al siguiente.</li>
+                <li>Las facturas de compra serán escaneadas en formato PDF y subidas al Portal de Auditoría de Gastos, disponibles para consulta del CLIENTE en todo momento.</li>
+            </ul>
+            <div class="caja-importante">
+                <strong>Operatoria diaria:</strong> Cuando el técnico de AXIAL SECURITY realiza una compra de materiales en nombre del CLIENTE, la factura es escaneada y subida al portal el mismo día, asignada al local correspondiente. Al cierre del mes, el sistema genera automáticamente un reporte consolidado por local y por categoría de gasto, disponible para descarga en PDF. El fondo operativo también funciona como <strong>sistema de stock</strong>: toda la mercadería entregada en cada local queda registrada, permitiendo al CLIENTE auditar inventario por tienda en tiempo real.
+            </div>
+        </div>
+
+        <!-- ART 6 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 6</span>
+            <h2>Locales de Provincia — Cobertura y Viajes Programados</h2>
+            <p>Los locales ubicados fuera del Área Metropolitana de Buenos Aires (AMBA), actualmente Rosario (Santa Fe) y Córdoba Capital, tendrán la siguiente cobertura diferenciada según modalidad:</p>
+            <ul>
+                <li><strong>Abono Medium:</strong> Los viajes a locales de provincia no están incluidos en el abono. Se facturarán como servicio adicional, previo presupuesto acordado entre las partes.</li>
+                <li><strong>Abono Full:</strong> Se incluyen hasta <strong>2 (dos) viajes mensuales programados</strong> a los locales de Rosario y/o Córdoba. Cada viaje incluye todos los gastos a cargo del PRESTADOR: traslados, hotel y comidas del personal técnico. El Fondo Operativo de Libre Disponibilidad se aplica también a estos locales.</li>
+            </ul>
+            <div class="caja-verde">
+                <strong>Coordinación de viajes:</strong> Los viajes a provincia serán coordinados con al menos 72 horas de anticipación, acordando fecha y actividades a realizar con el supervisor del CLIENTE en cada local. Si en un mes no se utilizan los 2 viajes incluidos, no se acumulan para el mes siguiente.
+            </div>
+        </div>
+
+        <!-- ART 7 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 7</span>
+            <h2>Responsabilidad por Daños</h2>
+            <p>El PRESTADOR se compromete a realizar todas las intervenciones con la debida diligencia profesional. No obstante, las partes acuerdan los siguientes límites de responsabilidad:</p>
+            <ul>
+                <li>El PRESTADOR responderá por <strong>daños accidentales directamente causados por sus técnicos</strong> durante la prestación del servicio, hasta un monto máximo de <strong>$500.000 + IVA por evento</strong>.</li>
+                <li>Esta cobertura aplica <strong>únicamente si el abono mensual se encuentra al día</strong> al momento del evento dañoso.</li>
+                <li>Quedan excluidos de esta responsabilidad: daños preexistentes, deterioro por uso normal, daños causados por terceros, fuerza mayor o caso fortuito, y daños derivados de instalaciones que no cumplan las normas eléctricas vigentes (ENRE / AEA).</li>
+                <li>El PRESTADOR no responderá por lucro cesante, pérdida de ganancias ni daños indirectos de ningún tipo.</li>
+                <li>Todo reclamo por daños deberá ser comunicado fehacientemente dentro de las 48 horas de ocurrido el evento.</li>
+            </ul>
+            <div class="caja-riesgo">
+                <strong>Condición sine qua non:</strong> La responsabilidad por daños del PRESTADOR queda sin efecto si el CLIENTE se encuentra en mora en el pago del abono al momento del evento. En dicho caso, el CLIENTE asume plena responsabilidad sobre las consecuencias de haber requerido el servicio durante el período de deuda.
+            </div>
+        </div>
+
+        <!-- ART 8 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 8</span>
+            <h2>Portal de Auditoría de Gastos — Acceso y Confidencialidad</h2>
+            <p>El PRESTADOR desarrollará y mantendrá, sin costo para el CLIENTE, un Portal de Auditoría de Gastos. El acceso al mismo estará sujeto a las siguientes condiciones:</p>
+            <ul>
+                <li>El portal es de <strong>uso exclusivo</strong> del CLIENTE (Luxury Crystals S.A.C. e I. / Swarovski Argentina) y del PRESTADOR (AXIAL SECURITY). Queda prohibido el acceso a terceros no autorizados.</li>
+                <li><strong>Roles de acceso:</strong> (a) Super Administrador — Iván Abrigo (AXIAL SECURITY): acceso total, carga, gestión y administración de hasta 5 usuarios adicionales; (b) Administrador — Luján Ortiz: acceso de lectura completo sobre todos los locales y períodos; (c) Supervisor — Pamela Lucuix u otro supervisor designado por el CLIENTE: acceso de visualización y generación de reportes.</li>
+                <li>Los supervisores del CLIENTE podrán ingresar su correo electrónico para recibir un PDF con el reporte de gastos de un período seleccionado. <strong>El período máximo por reporte es de 90 días corridos.</strong></li>
+                <li>El Super Administrador (AXIAL SECURITY) podrá generar reportes desde el inicio del contrato hasta la fecha de baja del mismo, sin límite de período.</li>
+                <li>El portal funcionará también como <strong>sistema de stock</strong>: toda la mercadería entregada en cada local quedará registrada con comprobante digital, permitiendo auditoría de inventario por tienda.</li>
+                <li>Las credenciales de acceso son personales e intransferibles. El CLIENTE se compromete a no compartir sus credenciales con personas ajenas a su organización.</li>
+            </ul>
+            <div class="caja-importante">
+                <strong>Propiedad del portal:</strong> El portal es desarrollado, alojado y mantenido íntegramente por AXIAL SECURITY. El CLIENTE accede como usuario auditor. En caso de rescisión del contrato, el CLIENTE podrá solicitar la exportación completa de sus datos en formato PDF o Excel dentro de los 30 días posteriores a la baja. Pasado ese plazo, los datos serán eliminados del sistema.
+            </div>
+        </div>
+
+        <!-- ART 9 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 9</span>
+            <h2>Seguridad Laboral y Responsabilidad del Personal</h2>
+            <p>AXIAL SECURITY asume la <strong>total responsabilidad laboral, previsional y civil</strong> sobre el personal técnico que intervenga en la prestación del servicio.</p>
+            <ul>
+                <li>El PRESTADOR presentará, a solicitud del CLIENTE, certificados de ART (Aseguradora de Riesgos del Trabajo) y Accidentes Personales con <strong>Cláusula de No Repetición a favor de Luxury Crystals S.A.C. e I.</strong></li>
+                <li>El personal técnico del PRESTADOR no tendrá relación de dependencia con el CLIENTE bajo ningún concepto.</li>
+                <li>El CLIENTE no asume responsabilidad alguna ante eventuales reclamos laborales del personal de AXIAL SECURITY.</li>
+            </ul>
+        </div>
+
+        <!-- ART 10 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 10</span>
+            <h2>Garantía de Servicio — SLA</h2>
+            <ul>
+                <li>El tiempo de respuesta comprometido es de <strong>3 horas</strong> (Abono Medium) y <strong>menos de 3 horas</strong> (Abono Full), contadas desde la notificación fehaciente de la incidencia.</li>
+                <li>En caso de que el PRESTADOR no pueda cumplir con un servicio solicitado por causas propias, emitirá una <strong>Nota de Crédito</strong> a favor del CLIENTE dentro de las 96 horas posteriores, por el valor proporcional del servicio no prestado.</li>
+                <li>No se considerará incumplimiento el retraso causado por fuerza mayor, condiciones climáticas extremas, cortes de suministro eléctrico, paros o situaciones de emergencia pública.</li>
+            </ul>
+        </div>
+
+        <!-- ART 11 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 11</span>
+            <h2>Vigencia y Rescisión</h2>
+            <ul>
+                <li>El presente contrato tiene vigencia mensual con <strong>renovación automática</strong>, a partir de la fecha de firma.</li>
+                <li>Cualquiera de las partes podrá rescindirlo con un preaviso mínimo de <strong>90 (noventa) días corridos</strong>, comunicado de forma fehaciente (carta documento, correo electrónico con acuse de recibo, o notarial).</li>
+                <li>Durante el período de preaviso, ambas partes mantendrán íntegramente sus obligaciones contractuales.</li>
+                <li>El CLIENTE que rescinda sin respetar el preaviso de 90 días deberá abonar al PRESTADOR una indemnización equivalente a <strong>1 (un) mes de abono completo</strong> como compensación por los costos operativos en que hubiera incurrido el PRESTADOR.</li>
+                <li>El PRESTADOR podrá rescindir sin preaviso en caso de mora reiterada (más de 2 veces en un año) o incumplimiento grave de las obligaciones del CLIENTE.</li>
+            </ul>
+            <div class="caja-riesgo">
+                <strong>Rescisión por mora:</strong> Si el CLIENTE acumula más de 2 (dos) incumplimientos en el pago del abono durante un mismo año calendario, el PRESTADOR podrá rescindir el contrato en forma inmediata, sin indemnización a favor del CLIENTE, reclamando todos los montos adeudados más los intereses establecidos en el Artículo 4.
+            </div>
+        </div>
+
+        <!-- ART 12 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 12</span>
+            <h2>Confidencialidad</h2>
+            <p>Ambas partes se comprometen a mantener la más estricta confidencialidad respecto de la información comercial, técnica y operativa a la que accedan en el marco de la ejecución del presente contrato.</p>
+            <ul>
+                <li>El CLIENTE no podrá divulgar los términos económicos de este contrato a terceros sin consentimiento expreso del PRESTADOR.</li>
+                <li>El PRESTADOR no podrá divulgar información sobre la infraestructura, sistemas de seguridad o datos operativos del CLIENTE a terceros.</li>
+                <li>El acceso al Portal de Auditoría es exclusivo para el personal autorizado de ambas empresas. Queda expresamente prohibida la cesión o compartición de credenciales.</li>
+                <li>Esta obligación de confidencialidad se extiende por 2 (dos) años posteriores a la terminación del contrato, por cualquier causa.</li>
+            </ul>
+        </div>
+
+        <!-- ART 13 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 13</span>
+            <h2>Jurisdicción y Ley Aplicable</h2>
+            <p>Para todos los efectos legales derivados del presente contrato, las partes se someten a la <strong>jurisdicción de los Tribunales Ordinarios de la Ciudad Autónoma de Buenos Aires</strong>, renunciando expresamente a cualquier otro fuero o jurisdicción que pudiera corresponderles.</p>
+            <p>El presente contrato se rige por las leyes de la República Argentina, en particular por las disposiciones del Código Civil y Comercial de la Nación vigente.</p>
+        </div>
+
+        <!-- ART 14 -->
+        <div class="art">
+            <span class="art-titulo">Artículo 14</span>
+            <h2>Disposiciones Generales</h2>
+            <ul>
+                <li>El presente contrato, junto con sus anexos, constituye el acuerdo completo entre las partes y reemplaza cualquier entendimiento previo, oral o escrito.</li>
+                <li>Cualquier modificación deberá ser acordada por escrito y firmada por ambas partes para ser válida.</li>
+                <li>Si alguna cláusula resultara nula o inaplicable, el resto del contrato mantendrá plena vigencia.</li>
+                <li>Las notificaciones entre las partes se realizarán a los correos electrónicos declarados en el encabezado de este contrato, con acuse de recibo, o mediante carta documento.</li>
+            </ul>
+        </div>
+
+        <!-- FIRMA -->
+        <div class="firma-section">
+            <p style="font-family:'Segoe UI',sans-serif; font-size:13px; color:#4a4845; margin-bottom:24px;">
+                En prueba de conformidad con todos y cada uno de los términos establecidos, las partes suscriben el presente contrato en dos ejemplares de igual tenor y a un solo efecto, en la Ciudad Autónoma de Buenos Aires, a los ____ días del mes de __________ de 2026.
+            </p>
+            <div class="firma-grid">
+                <div class="firma-bloque">
+                    <h4>Por Luxury Crystals S.A.C. e I. — El Cliente</h4>
+                    <div class="firma-linea"></div>
+                    <div class="firma-nombre">Luján Ortiz</div>
+                    <div class="firma-cargo">Gerente · Luxury Crystals / Swarovski Argentina</div>
+                    <div style="margin-top:20px;">
+                        <div class="firma-linea"></div>
+                        <div class="firma-cargo">Aclaración · DNI · Cargo</div>
+                    </div>
+                </div>
+                <div class="firma-bloque">
+                    <h4>Por AXIAL SECURITY — El Prestador</h4>
+                    <div class="firma-linea"></div>
+                    <div class="firma-nombre">Iván Abrigo</div>
+                    <div class="firma-cargo">Responsable Técnico · AXIAL SECURITY</div>
+                    <div style="margin-top:20px;">
+                        <div class="firma-linea"></div>
+                        <div class="firma-cargo">Aclaración · DNI · CUIT 20-24405084-1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /doc-body -->
+
+    <div class="footer">
+        <strong>AXIAL SECURITY</strong> · Servicios Técnicos Profesionales<br>
+        <span style="margin-top:4px; display:block; font-size:9px;">Contrato para revisión legal — Elaborado exclusivamente para Luxury Crystals S.A.C. e I. / Swarovski Argentina · Abril 2026</span>
+    </div>
+
+</div>
+</body>
+</html>
