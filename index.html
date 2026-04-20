@@ -1151,4 +1151,178 @@
 
 </div>
 </body>
-</html>
+</html<!-- ══ MODAL ══ -->
+<div id="modal-overlay" style="display:none; position:fixed; inset:0; background:rgba(26,25,23,0.75); z-index:1000; align-items:center; justify-content:center;">
+    <div id="modal-box" style="background:#faf8f5; max-width:500px; width:90%; padding:0; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+
+        <div style="background:#1a1917; padding:20px 28px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+                <div style="font-size:9px; letter-spacing:0.3em; text-transform:uppercase; color:#c9a96e; margin-bottom:4px;">Confirmación de Selección</div>
+                <div id="modal-plan-name" style="font-family:Georgia,serif; font-size:1.3rem; color:#faf8f5; letter-spacing:0.1em;"></div>
+            </div>
+            <button onclick="cerrarModal()" style="background:none; border:none; color:#9a9690; font-size:1.4rem; cursor:pointer; line-height:1;">✕</button>
+        </div>
+
+        <div style="padding:28px;">
+
+            <div style="background:#f5f1eb; border:1px solid #d4b07a; padding:12px 16px; margin-bottom:20px; font-size:12.5px; color:#4a3820; line-height:1.6;">
+                <strong>Luján</strong>, al confirmar tu selección te llegará un mail de confirmación a tu correo con el resumen del abono elegido y el link al contrato de servicios.
+            </div>
+
+            <div style="margin-bottom:16px;">
+                <label style="font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:#9a9690; display:block; margin-bottom:6px;">Nombre y Apellido</label>
+                <input id="inp-nombre" type="text"
+                    style="width:100%; padding:10px 14px; border:1px solid #ddd9d2; background:#fdfcfa; font-size:14px; color:#1a1917; font-family:inherit; outline:none;"
+                    onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#ddd9d2'"/>
+            </div>
+
+            <div style="margin-bottom:8px;">
+                <label style="font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:#9a9690; display:block; margin-bottom:6px;">Correo Electrónico</label>
+                <input id="inp-mail" type="email"
+                    style="width:100%; padding:10px 14px; border:1px solid #ddd9d2; background:#fdfcfa; font-size:14px; color:#1a1917; font-family:inherit; outline:none;"
+                    onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#ddd9d2'"/>
+            </div>
+
+            <div style="margin-bottom:20px;">
+                <label style="font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:#9a9690; display:block; margin-bottom:6px;">Fecha</label>
+                <input id="inp-fecha" type="text" readonly
+                    style="width:100%; padding:10px 14px; border:1px solid #ede9e3; background:#f5f1eb; font-size:14px; color:#9a9690; font-family:inherit; outline:none;"/>
+            </div>
+
+            <div id="modal-error" style="display:none; background:#fdf0ee; border:1px solid #e8b8b8; padding:10px 14px; font-size:12.5px; color:#7a2020; margin-bottom:16px;"></div>
+            <div id="modal-enviando" style="display:none; background:#f5f1eb; border:1px solid #d4b07a; padding:10px 14px; font-size:12.5px; color:#7a5a20; margin-bottom:16px; text-align:center;">
+                ⏳ &nbsp;Enviando confirmación...
+            </div>
+
+            <button id="btn-confirmar" onclick="confirmarSeleccion()"
+                style="width:100%; background:#1a1917; color:#c9a96e; border:none; padding:14px; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; font-family:inherit; font-weight:600;">
+                ✦ &nbsp;Aprobar este Abono
+            </button>
+
+            <p style="font-size:10.5px; color:#9a9690; text-align:center; margin-top:12px; line-height:1.6;">
+                Recibirás una confirmación en tu correo con el detalle del abono y el link al contrato.<br>
+                Tu información es tratada de forma confidencial.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ══ MODAL ÉXITO ══ -->
+<div id="modal-exito" style="display:none; position:fixed; inset:0; background:rgba(26,25,23,0.75); z-index:1001; align-items:center; justify-content:center;">
+    <div style="background:#faf8f5; max-width:460px; width:90%; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.3); text-align:center;">
+        <div style="background:#2d5a2d; padding:18px; color:#a8d4a8; font-size:10px; letter-spacing:0.3em; text-transform:uppercase; font-weight:600;">✓ &nbsp;Selección Confirmada</div>
+        <div style="padding:32px 28px;">
+            <div id="exito-msg" style="font-family:Georgia,serif; font-size:1.15rem; color:#1a1917; margin-bottom:14px; line-height:1.5;"></div>
+            <p style="font-size:13px; color:#6a6762; line-height:1.8; margin-bottom:8px;">
+                Te enviamos un mail de confirmación a tu correo con el detalle del abono seleccionado.
+            </p>
+            <p style="font-size:13px; color:#6a6762; line-height:1.8; margin-bottom:24px;">
+                <strong style="color:#1a1917;">Iván Abrigo</strong> de AXIAL SECURITY se pondrá en contacto a la brevedad para coordinar los próximos pasos.
+            </p>
+            <button onclick="cerrarExito()"
+                style="background:#1a1917; color:#c9a96e; border:none; padding:12px 32px; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; font-family:inherit; font-weight:600;">
+                Cerrar
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+// ── EMAILJS INIT ──
+emailjs.init("AuOD6coGtoyr_HxdB");
+
+var EMAILJS_SERVICE  = "service_7f26l3s";
+var EMAILJS_TEMPLATE = "template_lsrj9oe";
+var MAIL_IVAN        = "axial.security@gmail.com";
+// var MAIL_LUJAN    = "mlortiz@satrendy.com.ar"; // activar cuando esté listo
+
+var planSeleccionado = "";
+
+function getFecha() {
+    var d = new Date();
+    var dias = ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+    var meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+    return dias[d.getDay()] + " " + d.getDate() + " de " + meses[d.getMonth()] + " de " + d.getFullYear();
+}
+
+function abrirModal(plan) {
+    planSeleccionado = plan;
+    var nombres = {
+        medium: "ABONO MEDIUM — $3.250.000 + IVA",
+        full:   "ABONO FULL — $4.500.000 + IVA"
+    };
+    document.getElementById("modal-plan-name").textContent = nombres[plan];
+    document.getElementById("modal-error").style.display = "none";
+    document.getElementById("modal-enviando").style.display = "none";
+    document.getElementById("inp-nombre").value = "";
+    document.getElementById("inp-mail").value = "";
+    document.getElementById("inp-fecha").value = getFecha();
+    document.getElementById("btn-confirmar").disabled = false;
+    document.getElementById("btn-confirmar").style.opacity = "1";
+    var overlay = document.getElementById("modal-overlay");
+    overlay.style.display = "flex";
+    setTimeout(function(){ document.getElementById("inp-nombre").focus(); }, 100);
+}
+
+function cerrarModal() {
+    document.getElementById("modal-overlay").style.display = "none";
+}
+
+function cerrarExito() {
+    document.getElementById("modal-exito").style.display = "none";
+}
+
+function confirmarSeleccion() {
+    var nombre = document.getElementById("inp-nombre").value.trim();
+    var mail   = document.getElementById("inp-mail").value.trim();
+    var fecha  = document.getElementById("inp-fecha").value;
+    var errEl  = document.getElementById("modal-error");
+
+    if (!nombre) {
+        errEl.textContent = "Por favor ingresá tu nombre y apellido.";
+        errEl.style.display = "block"; return;
+    }
+    if (!mail || !mail.includes("@")) {
+        errEl.textContent = "Por favor ingresá un correo electrónico válido.";
+        errEl.style.display = "block"; return;
+    }
+    errEl.style.display = "none";
+
+    var planData = {
+        medium: { nombre: "ABONO MEDIUM", precio: "$3.250.000 + IVA / mes (gastos de movilidad aparte)" },
+        full:   { nombre: "ABONO FULL",   precio: "$4.500.000 + IVA / mes + Fondo $500.000 + IVA (facturado por separado)" }
+    };
+
+    var btn = document.getElementById("btn-confirmar");
+    btn.disabled = true;
+    btn.style.opacity = "0.6";
+    document.getElementById("modal-enviando").style.display = "block";
+
+    var templateParams = {
+        nombre_cliente: nombre,
+        email_cliente:  MAIL_IVAN,   // por ahora solo a Iván — cambiar a mail cuando esté listo
+        abono_nombre:   planData[planSeleccionado].nombre,
+        abono_precio:   planData[planSeleccionado].precio,
+        fecha:          fecha,
+        link_contrato:  "https://axialsc.github.io/contrato-swarovski-2026/contrato.html",
+        remitente_mail: mail
+    };
+
+    emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, templateParams)
+        .then(function() {
+            cerrarModal();
+            document.getElementById("exito-msg").textContent =
+                nombre + ", tu selección de " + planData[planSeleccionado].nombre + " fue registrada correctamente.";
+            document.getElementById("modal-exito").style.display = "flex";
+        }, function(error) {
+            document.getElementById("modal-enviando").style.display = "none";
+            errEl.textContent = "Hubo un error al enviar. Por favor intentá de nuevo o escribinos a axial.security@gmail.com";
+            errEl.style.display = "block";
+            btn.disabled = false;
+            btn.style.opacity = "1";
+            console.error("EmailJS error:", error);
+        });
+}
+</script>
