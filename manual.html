@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual de Usuario · Portal de Auditoría · Swarovski Argentina</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Jost', 'Segoe UI', sans-serif;
+    background: #ede9e3;
+    color: #1a1917;
+    font-size: 14.5px;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    background: #faf8f5;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+}
+
+a { color: #c9a96e; text-decoration: none; transition: color 0.2s; }
+a:hover { color: #1a1917; }
+
+/* ── COVER ── */
+.cover {
+    background: #1a1917;
+    color: #faf8f5;
+    padding: 70px 50px 60px;
+    position: relative;
+    overflow: hidden;
+}
+.cover::before {
+    content: '✦';
+    position: absolute;
+    bottom: -120px;
+    right: -60px;
+    font-size: 420px;
+    color: rgba(201,169,110,0.04);
+    pointer-events: none;
+    line-height: 1;
+}
+.cover-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 24px;
+}
+.cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.4rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+}
+.cover-line {
+    width: 70px;
+    height: 1px;
+    background: #c9a96e;
+    margin-bottom: 18px;
+}
+.cover-sub {
+    font-size: 15px;
+    color: #c9a96e;
+    letter-spacing: 0.08em;
+    line-height: 1.7;
+    max-width: 580px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+}
+.cover-meta {
+    display: flex;
+    gap: 36px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+.cover-meta strong { color: #faf8f5; }
+
+/* ── ÍNDICE ── */
+.indice {
+    background: #f5f1eb;
+    padding: 32px 50px;
+    border-bottom: 1px solid #ddd9d2;
+}
+.indice-title {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #7a5a20;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+.indice ol {
+    list-style: none;
+    counter-reset: item;
+    columns: 2;
+    column-gap: 36px;
+}
+.indice li {
+    counter-increment: item;
+    padding: 8px 0;
+    font-size: 13.5px;
+    border-bottom: 1px dotted #d4cfc4;
+    break-inside: avoid;
+    position: relative;
+    padding-left: 32px;
+}
+.indice li::before {
+    content: counter(item, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    color: #c9a96e;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.indice li a { color: #1a1917; }
+.indice li a:hover { color: #c9a96e; }
+
+/* ── SECCIONES ── */
+.body {
+    padding: 50px;
+}
+
+section {
+    margin-bottom: 60px;
+    scroll-margin-top: 20px;
+}
+
+.section-header {
+    border-bottom: 2px solid #c9a96e;
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+}
+.section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: #c9a96e;
+    line-height: 1;
+    font-weight: 400;
+}
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    color: #1a1917;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+.section-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: #1a1917;
+    margin: 28px 0 12px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+p {
+    margin-bottom: 14px;
+    color: #3a3835;
+}
+
+p strong { color: #1a1917; }
+
+ul, ol {
+    margin: 8px 0 16px 22px;
+}
+li { margin-bottom: 8px; color: #3a3835; line-height: 1.7; }
+
+/* ── CAJAS ── */
+.box-info {
+    background: #f5f1eb;
+    border-left: 3px solid #c9a96e;
+    padding: 18px 22px;
+    margin: 18px 0;
+    font-size: 13.5px;
+}
+.box-info strong { color: #1a1917; }
+
+.box-warning {
+    background: #fff3e0;
+    border-left: 3px solid #cc6600;
+    padding: 18px 22px;
+    margin: 18px 0;
+    font-size: 13.5px;
+    color: #6a3a00;
+}
+.box-warning strong { color: #4a2a00; }
+
+.box-success {
+    background: #e8f5ee;
+    border-left: 3px solid #2d6a4f;
+    padding: 18px 22px;
+    margin: 18px 0;
+    font-size: 13.5px;
+    color: #1e4d35;
+}
+
+.box-link {
+    background: #1a1917;
+    color: #faf8f5;
+    padding: 22px 26px;
+    margin: 22px 0;
+    text-align: center;
+    border: 2px solid #c9a96e;
+}
+.box-link a {
+    font-family: 'Courier New', monospace;
+    color: #c9a96e;
+    font-size: 16px;
+    font-weight: 600;
+    word-break: break-all;
+}
+.box-link-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(201,169,110,0.7);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* ── CREDENCIALES ── */
+.cred-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    margin: 16px 0;
+    border: 1px solid #d4b07a;
+}
+.cred-table th {
+    background: #1a1917;
+    color: #c9a96e;
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.cred-table td {
+    padding: 12px 14px;
+    border-top: 1px solid #f0ede8;
+    font-size: 13px;
+    vertical-align: middle;
+}
+.cred-table td.user-cell {
+    font-family: 'Courier New', monospace;
+    background: #f5f1eb;
+    color: #1a1917;
+    font-weight: 600;
+}
+.cred-table td.pass-cell {
+    font-family: 'Courier New', monospace;
+    background: #fff8ee;
+    color: #7a5a20;
+    font-weight: 600;
+}
+
+/* ── ROL TAGS ── */
+.rol-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 3px 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 2px;
+}
+.rol-admin { background: #2a4570; color: #cce0ff; }
+.rol-super-vis { background: #5a3a8a; color: #e0c8ff; }
+.rol-op { background: #6a6762; color: #f0ede8; }
+
+/* ── PASO A PASO ── */
+.steps {
+    counter-reset: step;
+    margin: 22px 0;
+}
+.step {
+    counter-increment: step;
+    background: #fff;
+    border: 1px solid #ddd9d2;
+    padding: 16px 18px 16px 60px;
+    margin-bottom: 10px;
+    position: relative;
+    border-left: 3px solid #c9a96e;
+}
+.step::before {
+    content: counter(step);
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: #c9a96e;
+    line-height: 1;
+    font-weight: 500;
+}
+.step strong { color: #1a1917; }
+.step-title {
+    font-weight: 600;
+    color: #1a1917;
+    margin-bottom: 4px;
+    font-size: 14.5px;
+}
+
+/* ── FUNCIONES GRID ── */
+.func-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 18px 0;
+}
+.func-card {
+    background: #fff;
+    border: 1px solid #ddd9d2;
+    border-left: 4px solid #c9a96e;
+    padding: 18px 22px;
+}
+.func-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+.func-card-title {
+    font-weight: 600;
+    color: #1a1917;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+.func-card-desc {
+    font-size: 12.5px;
+    color: #6a6762;
+    line-height: 1.6;
+}
+
+/* ── FOOTER ── */
+.footer {
+    background: #1a1917;
+    color: #faf8f5;
+    padding: 50px 50px 40px;
+    text-align: center;
+}
+.footer-axial {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #c9a96e;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+}
+.footer-line {
+    width: 70px;
+    height: 1px;
+    background: #c9a96e;
+    margin: 18px auto;
+}
+.footer-text {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    max-width: 480px;
+    margin: 0 auto 20px;
+}
+.footer-meta {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-top: 24px;
+}
+.footer a { color: #c9a96e; }
+
+.wa-btn {
+    display: inline-block;
+    background: #25D366;
+    color: #fff;
+    padding: 12px 24px;
+    margin-top: 16px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.wa-btn:hover { background: #1ea953; color: #fff; }
+
+kbd {
+    background: #f5f1eb;
+    border: 1px solid #d4cfc4;
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #1a1917;
+    box-shadow: 0 1px 0 #d4cfc4;
+}
+
+@media (max-width: 700px) {
+    .body, .indice { padding: 30px 24px; }
+    .cover { padding: 50px 28px; }
+    .cover h1 { font-size: 2.2rem; }
+    .indice ol { columns: 1; }
+    .func-grid { grid-template-columns: 1fr; }
+    .cover-meta { flex-direction: column; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- ══ COVER ══ -->
+<div class="cover">
+    <div class="cover-eyebrow">Manual de Usuario · Versión 2.6</div>
+    <h1>Portal de Auditoría<br>de Gastos</h1>
+    <div class="cover-line"></div>
+    <p class="cover-sub">
+        Guía de uso paso a paso para el equipo de Swarovski Argentina<br>
+        Sistema desarrollado por AXIAL SECURITY
+    </p>
+    <div class="cover-meta">
+        <div><strong>Cliente</strong> Luxury Crystals S.A.C. e I.</div>
+        <div><strong>Acceso</strong> Sin costo, sin límite</div>
+        <div><strong>Soporte</strong> WhatsApp directo</div>
+    </div>
+</div>
+
+<!-- ══ ÍNDICE ══ -->
+<div class="indice">
+    <div class="indice-title">Contenido</div>
+    <ol>
+        <li><a href="#bienvenida">Bienvenida</a></li>
+        <li><a href="#acceso">Cómo ingresar al portal</a></li>
+        <li><a href="#credenciales">Tus credenciales</a></li>
+        <li><a href="#cambiar-pass">Cambiar tu contraseña</a></li>
+        <li><a href="#dashboard">El Dashboard principal</a></li>
+        <li><a href="#calendario">Ver gastos por local</a></li>
+        <li><a href="#reportes">Generar reportes</a></li>
+        <li><a href="#categorias">Gestionar categorías</a></li>
+        <li><a href="#usuarios">Gestionar usuarios</a></li>
+        <li><a href="#locales">Gestionar locales</a></li>
+        <li><a href="#auditoria">Auditoría de accesos</a></li>
+        <li><a href="#seguridad">Seguridad y sesiones</a></li>
+        <li><a href="#soporte">Soporte y consultas</a></li>
+    </ol>
+</div>
+
+<div class="body">
+
+<!-- ══ 1. BIENVENIDA ══ -->
+<section id="bienvenida">
+    <div class="section-header">
+        <span class="section-num">01</span>
+        <div>
+            <div class="section-eyebrow">Para empezar</div>
+            <h2 class="section-title">Bienvenida al Portal</h2>
+        </div>
+    </div>
+
+    <p>Este portal fue desarrollado especialmente para el equipo de <strong>Swarovski Argentina</strong> con un objetivo concreto: <strong>tener trazabilidad total de los gastos operativos</strong> de cada local de la red, con respaldo digital de cada factura.</p>
+
+    <p>La idea surgió de las charlas con Pamela sobre la necesidad de contar con una herramienta que permitiera saber, en cualquier momento, qué se compró, en qué local, cuándo y por qué motivo. Algo que en años de trabajo se venía manejando manualmente y consumía mucho tiempo.</p>
+
+    <p>El sistema te permite:</p>
+    <div class="func-grid">
+        <div class="func-card">
+            <div class="func-card-icon">📅</div>
+            <div class="func-card-title">Calendario por local</div>
+            <div class="func-card-desc">Ver el detalle diario de gastos en cada una de las 14 ubicaciones de la red.</div>
+        </div>
+        <div class="func-card">
+            <div class="func-card-icon">📄</div>
+            <div class="func-card-title">Facturas digitales</div>
+            <div class="func-card-desc">Cada gasto puede tener su factura adjunta en PDF, JPG o PNG.</div>
+        </div>
+        <div class="func-card">
+            <div class="func-card-icon">📊</div>
+            <div class="func-card-title">Reportes con gráficos</div>
+            <div class="func-card-desc">Distribución por categoría, ranking de locales, tendencia mensual.</div>
+        </div>
+        <div class="func-card">
+            <div class="func-card-icon">🔐</div>
+            <div class="func-card-title">Auditoría de accesos</div>
+            <div class="func-card-desc">Registro completo de quién entró, cuándo y qué hizo.</div>
+        </div>
+    </div>
+
+    <div class="box-success">
+        <strong>El portal queda a disposición sin costo y sin límite de tiempo</strong>, mientras les sea útil. Si en algún momento deciden no usarlo más, solo me avisan y lo bajo de línea.
+    </div>
+</section>
+
+<!-- ══ 2. ACCESO ══ -->
+<section id="acceso">
+    <div class="section-header">
+        <span class="section-num">02</span>
+        <div>
+            <div class="section-eyebrow">Primer paso</div>
+            <h2 class="section-title">Cómo ingresar al portal</h2>
+        </div>
+    </div>
+
+    <p>El portal funciona desde cualquier navegador web (Chrome, Firefox, Edge, Safari) en computadora, tablet o celular.</p>
+
+    <div class="box-link">
+        <div class="box-link-label">Link de Acceso</div>
+        <a href="https://axialswarovski.pythonanywhere.com" target="_blank">
+            https://axialswarovski.pythonanywhere.com
+        </a>
+    </div>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-title">Abrí el navegador</div>
+            Pegá el link de arriba en la barra de direcciones, o hacé click directamente sobre él.
+        </div>
+        <div class="step">
+            <div class="step-title">Ingresá tus credenciales</div>
+            En la pantalla de login, completá tu <strong>usuario</strong> y <strong>contraseña</strong> (las encontrás en la sección 03).
+        </div>
+        <div class="step">
+            <div class="step-title">Tocá "Ingresar al Portal"</div>
+            Vas a entrar al Dashboard principal. ¡Listo!
+        </div>
+    </div>
+
+    <div class="box-info">
+        💡 <strong>Recomendación:</strong> Guardá el link como favorito en tu navegador para acceder rápido.
+    </div>
+</section>
+
+<!-- ══ 3. CREDENCIALES ══ -->
+<section id="credenciales">
+    <div class="section-header">
+        <span class="section-num">03</span>
+        <div>
+            <div class="section-eyebrow">Accesos del equipo</div>
+            <h2 class="section-title">Tus credenciales</h2>
+        </div>
+    </div>
+
+    <p>Cada uno tiene su acceso personal al portal con un rol asignado. El rol determina qué cosas podés hacer y qué no.</p>
+
+    <table class="cred-table">
+        <thead>
+            <tr>
+                <th>Persona</th>
+                <th>Rol</th>
+                <th>Usuario</th>
+                <th>Contraseña inicial</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Luján Ortiz</strong></td>
+                <td><span class="rol-tag rol-admin">Administrador/a</span></td>
+                <td class="user-cell">Lujan</td>
+                <td class="pass-cell">swaro2026</td>
+            </tr>
+            <tr>
+                <td><strong>Pamela Lucuix</strong></td>
+                <td><span class="rol-tag rol-super-vis">Supervisor/a</span></td>
+                <td class="user-cell">supervisor</td>
+                <td class="pass-cell">pamela2026</td>
+            </tr>
+            <tr>
+                <td><strong>Gustavo Ateca</strong></td>
+                <td><span class="rol-tag rol-op">Operador/a</span></td>
+                <td class="user-cell">gateca</td>
+                <td class="pass-cell">gustavo2026</td>
+            </tr>
+            <tr>
+                <td><strong>Javier Pompei</strong></td>
+                <td><span class="rol-tag rol-op">Operador/a</span></td>
+                <td class="user-cell">jpompei</td>
+                <td class="pass-cell">javier2026</td>
+            </tr>
+            <tr>
+                <td><strong>Silvina Lopez</strong></td>
+                <td><span class="rol-tag rol-op">Operador/a</span></td>
+                <td class="user-cell">slopez</td>
+                <td class="pass-cell">silvina2026</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="box-warning">
+        ⚠ <strong>Importante:</strong> Las contraseñas que ven arriba son <strong>iniciales</strong>. Por seguridad, cada uno debería cambiar su contraseña la primera vez que ingrese. En la sección siguiente te explico cómo hacerlo.
+    </div>
+
+    <h3>¿Qué puede hacer cada rol?</h3>
+
+    <div class="func-grid">
+        <div class="func-card">
+            <div class="func-card-title"><span class="rol-tag rol-admin">Administrador/a</span></div>
+            <div class="func-card-desc"><strong>Luján:</strong> Ve todo el sistema, crea usuarios, gestiona categorías y locales, accede al log de auditoría, descarga reportes.</div>
+        </div>
+        <div class="func-card">
+            <div class="func-card-title"><span class="rol-tag rol-super-vis">Supervisor/a</span></div>
+            <div class="func-card-desc"><strong>Pamela:</strong> Ve todos los gastos, descarga reportes, crea usuarios. Es el rol orientado al control diario.</div>
+        </div>
+        <div class="func-card">
+            <div class="func-card-title"><span class="rol-tag rol-op">Operador/a</span></div>
+            <div class="func-card-desc"><strong>Gustavo, Javier, Silvina:</strong> Acceso de consulta general — pueden ver dashboard, calendarios y reportes.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ 4. CAMBIAR PASSWORD ══ -->
+<section id="cambiar-pass">
+    <div class="section-header">
+        <span class="section-num">04</span>
+        <div>
+            <div class="section-eyebrow">Importante</div>
+            <h2 class="section-title">Cambiar tu contraseña</h2>
+        </div>
+    </div>
+
+    <p>Las contraseñas iniciales son temporales y conviene cambiarlas en el primer ingreso por una propia, que solo vos sepas.</p>
+
+    <h3>Para Luján (Administrador/a)</h3>
+    <div class="steps">
+        <div class="step">
+            <div class="step-title">Ingresá al portal con tu usuario</div>
+            Usá <kbd>Lujan</kbd> y la contraseña <kbd>swaro2026</kbd>.
+        </div>
+        <div class="step">
+            <div class="step-title">Andá a la pestaña "Usuarios"</div>
+            La encontrás en el menú lateral izquierdo.
+        </div>
+        <div class="step">
+            <div class="step-title">Buscá tu nombre en la lista</div>
+            Aparecés en la tabla con tu rol Administrador/a.
+        </div>
+        <div class="step">
+            <div class="step-title">Pedile a Iván que te resetee la contraseña</div>
+            Por seguridad, los administradores no pueden cambiar sus propias contraseñas — eso solo lo puede hacer el Super Admin (Iván) desde su cuenta. Avisale por WhatsApp y en 1 minuto te la cambia.
+        </div>
+    </div>
+
+    <div class="box-info">
+        💡 <strong>Para Pamela y los demás operadores:</strong> Mismo procedimiento — hablar con Luján o con Iván para que les reseteen la contraseña a una nueva. Anótenla en un lugar seguro.
+    </div>
+</section>
+
+<!-- ══ 5. DASHBOARD ══ -->
+<section id="dashboard">
+    <div class="section-header">
+        <span class="section-num">05</span>
+        <div>
+            <div class="section-eyebrow">Pantalla principal</div>
+            <h2 class="section-title">El Dashboard principal</h2>
+        </div>
+    </div>
+
+    <p>Cuando ingresás al portal, lo primero que ves es el Dashboard — la vista general de toda la red.</p>
+
+    <h3>Qué encontrás en el Dashboard</h3>
+    <ul>
+        <li><strong>4 indicadores arriba (KPIs):</strong> Gasto total del mes · Fondo disponible · Acumulado anual · Cantidad de locales activos.</li>
+        <li><strong>Listado de locales agrupados por zona:</strong> AMBA Zona Norte, Zona Sur, CABA, Interior, Góndolas.</li>
+        <li><strong>Cada tarjeta de local muestra:</strong> Nombre · Dirección · Gasto del mes · Cantidad de facturas cargadas.</li>
+    </ul>
+
+    <h3>Cómo ver los gastos de un local</h3>
+    <p>Hacés click sobre cualquier tarjeta de local (por ejemplo, "Shopping Unicenter") y entrás al <strong>calendario mensual</strong> de ese local. Desde ahí podés navegar por meses anteriores o ver el detalle día por día.</p>
+</section>
+
+<!-- ══ 6. CALENDARIO ══ -->
+<section id="calendario">
+    <div class="section-header">
+        <span class="section-num">06</span>
+        <div>
+            <div class="section-eyebrow">Vista por local</div>
+            <h2 class="section-title">Ver gastos por local</h2>
+        </div>
+    </div>
+
+    <p>El calendario te muestra una vista mensual completa del local que elegiste. Cada día del mes aparece como una celda en una grilla típica de calendario.</p>
+
+    <h3>Cómo leer el calendario</h3>
+    <ul>
+        <li><strong>Días con fondo verde:</strong> tienen gastos cargados — ves el monto total y la cantidad de facturas.</li>
+        <li><strong>Día en color dorado:</strong> es el día de hoy.</li>
+        <li><strong>Días en gris claro:</strong> son sábados y domingos.</li>
+        <li><strong>Días sin nada:</strong> no se cargaron movimientos ese día.</li>
+    </ul>
+
+    <h3>Ver el detalle de un día</h3>
+    <div class="steps">
+        <div class="step">
+            <div class="step-title">Click en cualquier día con gastos</div>
+            Te abre la vista detallada de ese día, con cada gasto listado.
+        </div>
+        <div class="step">
+            <div class="step-title">Cada gasto muestra</div>
+            Concepto · Categoría (con color) · Proveedor · Quién lo cargó · Monto.
+        </div>
+        <div class="step">
+            <div class="step-title">Si tiene factura adjunta</div>
+            Aparece un botón <kbd>📄 Factura</kbd> que abre el PDF en una nueva pestaña.
+        </div>
+    </div>
+
+    <h3>Navegar entre meses</h3>
+    <p>Arriba del calendario hay dos botones: <kbd>← Mes anterior</kbd> y <kbd>Mes siguiente →</kbd>. Vas y volvés todos los meses que quieras.</p>
+</section>
+
+<!-- ══ 7. REPORTES ══ -->
+<section id="reportes">
+    <div class="section-header">
+        <span class="section-num">07</span>
+        <div>
+            <div class="section-eyebrow">Análisis y métricas</div>
+            <h2 class="section-title">Generar reportes</h2>
+        </div>
+    </div>
+
+    <p>La pestaña <strong>Reportes</strong> es probablemente la más útil para ver cómo está la operación general. Te permite analizar gastos por período, por local, por categoría, y descargar un PDF profesional o enviarlo por email.</p>
+
+    <h3>Cómo generar un reporte</h3>
+    <div class="steps">
+        <div class="step">
+            <div class="step-title">Andá a "Reportes" en el menú lateral</div>
+            Por defecto te muestra el mes actual completo.
+        </div>
+        <div class="step">
+            <div class="step-title">Elegí el rango de fechas</div>
+            Cambiá las fechas <strong>Desde</strong> y <strong>Hasta</strong> según lo que quieras analizar.
+        </div>
+        <div class="step">
+            <div class="step-title">Filtrá por local (opcional)</div>
+            Podés ver todos los locales o solo uno específico.
+        </div>
+        <div class="step">
+            <div class="step-title">Tocá "Generar Reporte"</div>
+            En segundos te muestra los gráficos y la tabla detallada.
+        </div>
+    </div>
+
+    <h3>Qué te muestra el reporte</h3>
+    <ul>
+        <li><strong>4 KPIs grandes:</strong> Total gastado · Cantidad de facturas · Ticket promedio · Locales con movimiento.</li>
+        <li><strong>🍩 Gráfico torta:</strong> distribución del gasto por categoría (con porcentajes).</li>
+        <li><strong>📊 Gráfico de barras:</strong> ranking de locales de mayor a menor gasto.</li>
+        <li><strong>📈 Gráfico de línea:</strong> tendencia de gastos en los últimos 6 meses.</li>
+        <li><strong>📋 Tabla de detalle:</strong> cada movimiento del período con su factura.</li>
+    </ul>
+
+    <h3>Descargar como PDF</h3>
+    <p>Tocá el botón <kbd>📄 Descargar PDF</kbd>. Se abre una vista limpia en formato impresión. Tu navegador te ofrece "Imprimir" — elegí "Guardar como PDF" en el destino y listo.</p>
+
+    <h3>Enviar por email</h3>
+    <p>Tocá <kbd>📧 Enviar por Email</kbd>, ponés el mail destinatario y un mensaje opcional. El sistema envía un resumen con los datos clave.</p>
+</section>
+
+<!-- ══ 8. CATEGORÍAS ══ -->
+<section id="categorias">
+    <div class="section-header">
+        <span class="section-num">08</span>
+        <div>
+            <div class="section-eyebrow">Clasificación</div>
+            <h2 class="section-title">Gestionar categorías</h2>
+        </div>
+    </div>
+
+    <p>Cada gasto se carga con una <strong>categoría</strong> asignada. Eso permite tener reportes por sector ("cuánto gastamos en plomería este mes", "qué local consume más en informática").</p>
+
+    <h3>Categorías que vienen por defecto</h3>
+    <p>El sistema viene con 10 categorías iniciales sugeridas por el equipo:</p>
+    <ul>
+        <li>💻 Informática · ⚡ Electricidad · 🔧 Plomería · 🔩 Ferretería · 🪑 Muebles</li>
+        <li>⚙ Herrajes · 🔐 Cerraduras · 🪟 Cortinas · 📺 Electrónica · 📦 Otros</li>
+    </ul>
+
+    <h3>Agregar nuevas categorías</h3>
+    <p>Si encontrás que falta alguna categoría útil (por ejemplo, "Pintura", "Limpieza", "Jardinería"), Luján puede agregarla.</p>
+    <div class="steps">
+        <div class="step">
+            <div class="step-title">Andá a "Categorías" en el menú</div>
+            Pestaña visible para Luján y Pamela.
+        </div>
+        <div class="step">
+            <div class="step-title">Completá el formulario "Crear Nueva Categoría"</div>
+            Nombre · Ícono (un emoji) · Color identificador.
+        </div>
+        <div class="step">
+            <div class="step-title">Tocá "+ Crear Categoría"</div>
+            Queda disponible inmediatamente para los próximos gastos.
+        </div>
+    </div>
+
+    <div class="box-info">
+        💡 <strong>Tip:</strong> Las categorías originales del sistema no se pueden eliminar pero sí desactivar (si hay alguna que no usen).
+    </div>
+</section>
+
+<!-- ══ 9. USUARIOS ══ -->
+<section id="usuarios">
+    <div class="section-header">
+        <span class="section-num">09</span>
+        <div>
+            <div class="section-eyebrow">Gestión de equipo</div>
+            <h2 class="section-title">Gestionar usuarios</h2>
+        </div>
+    </div>
+
+    <p>El sistema soporta hasta <strong>50 usuarios activos</strong>. Cada usuario tiene un rol que define sus permisos.</p>
+
+    <h3>Roles disponibles</h3>
+    <ul>
+        <li><strong>Administrador/a:</strong> ve todo, crea usuarios, gestiona categorías y locales.</li>
+        <li><strong>Supervisor/a:</strong> ve todo, crea usuarios. No accede al log de auditoría.</li>
+        <li><strong>Operador/a Ciego/a:</strong> solo ve los gastos de UN local que se le asigna. Útil para gerentes de tienda.</li>
+    </ul>
+
+    <h3>Crear un usuario nuevo</h3>
+    <div class="steps">
+        <div class="step">
+            <div class="step-title">Pestaña "Usuarios"</div>
+            Visible para Luján y Pamela.
+        </div>
+        <div class="step">
+            <div class="step-title">Completá el formulario "Crear Nuevo Usuario"</div>
+            Nombre completo · Username · Email · Contraseña (o auto-generar) · Rol.
+        </div>
+        <div class="step">
+            <div class="step-title">Si elegís "Operador/a Ciego/a"</div>
+            Se despliega un selector adicional para elegir el local que solo va a ver esa persona.
+        </div>
+        <div class="step">
+            <div class="step-title">Tocá "+ Crear Usuario"</div>
+            Listo. Después podés tocar el botón verde <kbd>⬈ Compartir</kbd> para enviar las credenciales por WhatsApp o email con plantillas profesionales pre-armadas.
+        </div>
+    </div>
+
+    <h3>Compartir credenciales con un usuario nuevo</h3>
+    <p>Cada usuario en la lista tiene un botón verde <kbd>⬈ Compartir</kbd>. Al tocarlo se abre una ventana con <strong>3 plantillas listas para copiar y pegar</strong>:</p>
+    <ul>
+        <li><strong>WhatsApp:</strong> mensaje con emojis, formato bold y datos del acceso.</li>
+        <li><strong>Email Formal:</strong> versión más profesional para enviar por correo.</li>
+        <li><strong>Breve:</strong> versión corta para casos rápidos.</li>
+    </ul>
+    <p>La contraseña que asignaste queda pre-cargada automáticamente. Solo copiás el mensaje y lo pegás donde quieras enviarlo.</p>
+</section>
+
+<!-- ══ 10. LOCALES ══ -->
+<section id="locales">
+    <div class="section-header">
+        <span class="section-num">10</span>
+        <div>
+            <div class="section-eyebrow">Red de tiendas</div>
+            <h2 class="section-title">Gestionar locales</h2>
+        </div>
+    </div>
+
+    <p>El sistema viene cargado con los 14 puntos de venta de la red Swarovski Argentina (12 tiendas + 2 góndolas). Si en el futuro abren un local nuevo, Luján puede agregarlo desde el portal sin necesidad de soporte técnico.</p>
+
+    <h3>Agregar un local nuevo</h3>
+    <div class="steps">
+        <div class="step">
+            <div class="step-title">Andá a "Locales" en el menú lateral</div>
+        </div>
+        <div class="step">
+            <div class="step-title">Completá "Agregar Nuevo Local o Góndola"</div>
+            Nombre · Tipo (Tienda o Góndola) · Zona · Dirección.
+        </div>
+        <div class="step">
+            <div class="step-title">Tocá "+ Crear Local"</div>
+            Aparece en el dashboard inmediatamente y queda disponible para cargar gastos.
+        </div>
+    </div>
+
+    <h3>Editar o desactivar un local</h3>
+    <p>Cada local en la lista tiene tres botones:</p>
+    <ul>
+        <li><kbd>✎ Editar</kbd> — cambiar nombre, dirección, zona o tipo.</li>
+        <li><kbd>Desactivar</kbd> — cuando un local cierra, lo desactivás. No se borra (queda el histórico) pero deja de aparecer.</li>
+    </ul>
+</section>
+
+<!-- ══ 11. AUDITORÍA ══ -->
+<section id="auditoria">
+    <div class="section-header">
+        <span class="section-num">11</span>
+        <div>
+            <div class="section-eyebrow">Trazabilidad</div>
+            <h2 class="section-title">Auditoría de accesos</h2>
+        </div>
+    </div>
+
+    <p>El sistema registra <strong>cada acción importante</strong> que hacen los usuarios: cuándo entró cada uno, qué cambió, qué eliminó, qué creó. Eso queda en un log permanente que puede consultarse en cualquier momento.</p>
+
+    <div class="box-warning">
+        🔐 <strong>Acceso restringido:</strong> Solo el Administrador/a (Luján) puede ver el log de auditoría. Pamela y los operadores no tienen acceso a esta sección por privacidad y seguridad.
+    </div>
+
+    <h3>Qué información encontrás</h3>
+    <ul>
+        <li><strong>Fecha y hora exacta</strong> (en horario de Argentina).</li>
+        <li><strong>Usuario y nombre completo</strong> de quien hizo la acción.</li>
+        <li><strong>Tipo de acción</strong> con código de colores: Login (verde) · Logout Manual (rojo) · Auto Logout por Inactividad (naranja) · Crear Usuario (azul) · etc.</li>
+        <li><strong>IP de origen</strong> desde donde se conectó.</li>
+        <li><strong>Detalles</strong> de qué hizo exactamente.</li>
+    </ul>
+
+    <p>Hay <strong>filtros</strong> para buscar por usuario o por tipo de acción, y paginación de 50 registros por página.</p>
+</section>
+
+<!-- ══ 12. SEGURIDAD ══ -->
+<section id="seguridad">
+    <div class="section-header">
+        <span class="section-num">12</span>
+        <div>
+            <div class="section-eyebrow">Cuidado del sistema</div>
+            <h2 class="section-title">Seguridad y sesiones</h2>
+        </div>
+    </div>
+
+    <h3>Cierre automático por inactividad</h3>
+    <p>Si dejás el portal abierto sin tocar nada por <strong>2 minutos</strong>, el sistema te cierra la sesión automáticamente. Es una medida de seguridad para evitar que alguien acceda si te alejás de la computadora.</p>
+
+    <p><strong>30 segundos antes de cerrarse</strong>, te aparece un cartel con un contador y el botón <kbd>Sí, sigo trabajando</kbd>. Si lo tocás, la sesión se renueva.</p>
+
+    <h3>Cierre manual</h3>
+    <p>En el menú lateral, abajo de tu nombre, hay un ícono <kbd>⏻</kbd>. Tocálo para cerrar tu sesión cuando termines de usar el portal.</p>
+
+    <h3>Buenas prácticas</h3>
+    <ul>
+        <li>Cambiá tu contraseña inicial apenas entres por primera vez.</li>
+        <li>Nunca compartas tu usuario y contraseña con otra persona — cada uno tiene la suya.</li>
+        <li>Cuando termines de usar el portal, cerrá sesión manualmente (especialmente en computadoras compartidas).</li>
+        <li>Si sospechás que alguien usó tu cuenta, avisá a Luján o a Iván para resetear la contraseña.</li>
+    </ul>
+</section>
+
+<!-- ══ 13. SOPORTE ══ -->
+<section id="soporte">
+    <div class="section-header">
+        <span class="section-num">13</span>
+        <div>
+            <div class="section-eyebrow">Estoy a un mensaje</div>
+            <h2 class="section-title">Soporte y consultas</h2>
+        </div>
+    </div>
+
+    <p>Cualquier duda, consulta técnica, problema con el portal o sugerencia de mejora, escribime directamente:</p>
+
+    <div class="box-link">
+        <div class="box-link-label">Contacto Directo</div>
+        <a href="https://wa.me/5491164148500?text=Hola%20Iv%C3%A1n%21%20Vengo%20desde%20el%20Portal%20de%20Swarovski%20y%20necesito%20una%20consulta.%20Mi%20nombre%20es%3A%20" target="_blank">
+            WhatsApp · +54 9 11 6414-8500
+        </a>
+        <br>
+        <a href="https://wa.me/5491164148500?text=Hola%20Iv%C3%A1n%21%20Vengo%20desde%20el%20Portal%20de%20Swarovski%20y%20necesito%20una%20consulta.%20Mi%20nombre%20es%3A%20"
+           target="_blank" class="wa-btn">
+            💬 Abrir WhatsApp
+        </a>
+    </div>
+
+    <p>También en cualquier página del portal vas a ver el footer abajo con el link clickeable a <strong>AXIAL SECURITY 💬</strong> que abre WhatsApp directamente con un mensaje pre-cargado.</p>
+
+    <div class="box-success">
+        💛 <strong>Importante:</strong> El portal está pensado para que sea fácil de usar. Si algo no se entiende o te traba, no dudes en escribirme — siempre voy a estar para ayudarlos. Esto se los dejo con cariño.
+    </div>
+</section>
+
+</div>
+
+<!-- ══ FOOTER ══ -->
+<div class="footer">
+    <div class="footer-axial">AXIAL SECURITY</div>
+    <div class="footer-line"></div>
+    <p class="footer-text">
+        Portal de Auditoría de Gastos · Desarrollado con dedicación para el equipo de Swarovski Argentina.
+    </p>
+    <p class="footer-text" style="font-style:italic; opacity:0.6;">
+        "No es un adiós, es un hasta luego."
+    </p>
+    <div class="footer-meta">
+        Iván Abrigo · axial.security@gmail.com<br>
+        WhatsApp +54 9 11 6414-8500
+    </div>
+</div>
+
+</div>
+</body>
+</html>
